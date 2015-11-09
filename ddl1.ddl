@@ -9,30 +9,30 @@
 CREATE TABLE Contacts
   (
     effective_date            DATE ,
-    "F15.F5_RFE_rfe_id"       INTEGER NOT NULL ,
-    "F15.F5_Role_Codes_rcode" INTEGER NOT NULL ,
-    "F15.F5_Emp_emp_id"       INTEGER NOT NULL ,
+    "F15_F5_RFE_rfe_id"       INTEGER NOT NULL ,
+    "F15_F5_Role_Codes_rcode" INTEGER NOT NULL ,
+    "F15_F5_Emp_emp_id"       INTEGER NOT NULL ,
     comments                  VARCHAR2 (4000)
   ) ;
 CREATE UNIQUE INDEX Contacts__IDX ON Contacts
   (
-    "F15.F5_Emp_emp_id" ASC
+    "F15_F5_Emp_emp_id" ASC
   )
   ;
 
 
-CREATE TABLE "F15.F5_Cmt"
+CREATE TABLE "F15_F5_Cmt"
   (
     cmt_id              INTEGER NOT NULL ,
     comment_entry_date  DATE ,
-    "F15.F5_RFE_rfe_id" INTEGER ,
+    "F15_F5_RFE_rfe_id" INTEGER ,
     comments            VARCHAR2 (4000) ,
-    "F15.F5_Emp_emp_id" INTEGER NOT NULL
+    "F15_F5_Emp_emp_id" INTEGER NOT NULL
   ) ;
-ALTER TABLE "F15.F5_Cmt" ADD CONSTRAINT "F15.F5_Cmt_PK" PRIMARY KEY ( cmt_id ) ;
+ALTER TABLE "F15_F5_Cmt" ADD CONSTRAINT "F15_F5_Cmt_PK" PRIMARY KEY ( cmt_id ) ;
 
 
-CREATE TABLE "F15.F5_Emp"
+CREATE TABLE "F15_F5_Emp"
   (
     emp_id             INTEGER NOT NULL ,
     employee_status    CHAR (1) ,
@@ -47,105 +47,105 @@ CREATE TABLE "F15.F5_Emp"
     exec_director_flag CHAR (1) ,
     chairperson_flag   CHAR (1)
   ) ;
-ALTER TABLE "F15.F5_Emp" ADD CONSTRAINT "F15.F5_Emp_PK" PRIMARY KEY ( emp_id ) ;
+ALTER TABLE "F15_F5_Emp" ADD CONSTRAINT "F15_F5_Emp_PK" PRIMARY KEY ( emp_id ) ;
 
 
-CREATE TABLE "F15.F5_Lab"
+CREATE TABLE "F15_F5_Lab"
   (
     lab_id              INTEGER NOT NULL ,
-    "F15.F5_Emp_emp_id" INTEGER NOT NULL
+    "F15_F5_Emp_emp_id" INTEGER NOT NULL
   ) ;
-ALTER TABLE "F15.F5_Lab" ADD CONSTRAINT "F15.F5_Lab_PK" PRIMARY KEY ( lab_id ) ;
+ALTER TABLE "F15_F5_Lab" ADD CONSTRAINT "F15_F5_Lab_PK" PRIMARY KEY ( lab_id ) ;
 
 
-CREATE TABLE "F15.F5_Project"
+CREATE TABLE "F15_F5_Project"
   (
     project_id          INTEGER NOT NULL ,
-    "F15.F5_Lab_lab_id" INTEGER NOT NULL
+    "F15_F5_Lab_lab_id" INTEGER NOT NULL
   ) ;
-ALTER TABLE "F15.F5_Project" ADD CONSTRAINT "F15.F5_Project_PK" PRIMARY KEY ( project_id ) ;
+ALTER TABLE "F15_F5_Project" ADD CONSTRAINT "F15_F5_Project_PK" PRIMARY KEY ( project_id ) ;
 
 
-CREATE TABLE "F15.F5_RFE"
+CREATE TABLE "F15_F5_RFE"
   (
     rfe_id               INTEGER NOT NULL ,
     explanation          VARCHAR2 (4000) ,
     alt_protections      VARCHAR2 (4000) ,
     approval_review_date DATE
   ) ;
-ALTER TABLE "F15.F5_RFE" ADD CONSTRAINT "F15.F5_RFE_PK" PRIMARY KEY ( rfe_id ) ;
+ALTER TABLE "F15_F5_RFE" ADD CONSTRAINT "F15_F5_RFE_PK" PRIMARY KEY ( rfe_id ) ;
 
 
-CREATE TABLE "F15.F5_RFE_Tasks"
+CREATE TABLE "F15_F5_RFE_Tasks"
   (
     effective_date      DATE ,
     task_abbreviation   VARCHAR2 (15) ,
     task_description    VARCHAR2 (4000) ,
-    "F15.F5_RFE_rfe_id" INTEGER NOT NULL
+    "F15_F5_RFE_rfe_id" INTEGER NOT NULL
   ) ;
 
 
-CREATE TABLE "F15.F5_Role_Codes"
+CREATE TABLE "F15_F5_Role_Codes"
   (
     rcode       INTEGER NOT NULL ,
     role_type   VARCHAR2 (30) ,
     description VARCHAR2 (500)
   ) ;
-ALTER TABLE "F15.F5_Role_Codes" ADD CONSTRAINT "F15.F5_Role_Codes_PK" PRIMARY KEY ( rcode ) ;
+ALTER TABLE "F15_F5_Role_Codes" ADD CONSTRAINT "F15_F5_Role_Codes_PK" PRIMARY KEY ( rcode ) ;
 
 
-CREATE TABLE "F15.F5_Sts"
+CREATE TABLE "F15_F5_Sts"
   (
     status_id           INTEGER NOT NULL ,
-    "F15.F5_RFE_rfe_id" INTEGER NOT NULL ,
-    "F15.F5_sc_scode"   INTEGER NOT NULL ,
+    "F15_F5_RFE_rfe_id" INTEGER NOT NULL ,
+    "F15_F5_sc_scode"   INTEGER NOT NULL ,
     effective_date      DATE ,
     entered_by_emp_id   INTEGER
   ) ;
-ALTER TABLE "F15.F5_Sts" ADD CONSTRAINT "F15.F5_Sts_PK" PRIMARY KEY ( status_id ) ;
+ALTER TABLE "F15_F5_Sts" ADD CONSTRAINT "F15_F5_Sts_PK" PRIMARY KEY ( status_id ) ;
 
 
-CREATE TABLE "F15.F5_sc"
+CREATE TABLE "F15_F5_sc"
   (
     scode       INTEGER NOT NULL ,
     rfe_status  VARCHAR2 (30) ,
     description VARCHAR2 (500)
   ) ;
-ALTER TABLE "F15.F5_sc" ADD CONSTRAINT "F15.F5_sc_PK" PRIMARY KEY ( scode ) ;
+ALTER TABLE "F15_F5_sc" ADD CONSTRAINT "F15_F5_sc_PK" PRIMARY KEY ( scode ) ;
 
 
-CREATE TABLE "F15.F5_sh"
+CREATE TABLE "F15_F5_sh"
   (
     sh_id                  INTEGER NOT NULL ,
-    "F15.F5_RFE_rfe_id"    INTEGER NOT NULL ,
-    "F15.F5_Sts_status_id" INTEGER NOT NULL
+    "F15_F5_RFE_rfe_id"    INTEGER NOT NULL ,
+    "F15_F5_Sts_status_id" INTEGER NOT NULL
   ) ;
-ALTER TABLE "F15.F5_sh" ADD CONSTRAINT "F15.F5_sh_PK" PRIMARY KEY ( sh_id ) ;
+ALTER TABLE "F15_F5_sh" ADD CONSTRAINT "F15_F5_sh_PK" PRIMARY KEY ( sh_id ) ;
 
 
-ALTER TABLE Contacts ADD CONSTRAINT "Contacts_F15.F5_Emp_FK" FOREIGN KEY ( "F15.F5_Emp_emp_id" ) REFERENCES "F15.F5_Emp" ( emp_id ) ;
+ALTER TABLE Contacts ADD CONSTRAINT "Contacts_F15_F5_Emp_FK" FOREIGN KEY ( "F15_F5_Emp_emp_id" ) REFERENCES "F15_F5_Emp" ( emp_id ) ;
 
-ALTER TABLE Contacts ADD CONSTRAINT "Contacts_F15.F5_RFE_FK" FOREIGN KEY ( "F15.F5_RFE_rfe_id" ) REFERENCES "F15.F5_RFE" ( rfe_id ) ;
+ALTER TABLE Contacts ADD CONSTRAINT "Contacts_F15_F5_RFE_FK" FOREIGN KEY ( "F15_F5_RFE_rfe_id" ) REFERENCES "F15_F5_RFE" ( rfe_id ) ;
 
-ALTER TABLE Contacts ADD CONSTRAINT "Contacts_F15.F5_Role_Codes_FK" FOREIGN KEY ( "F15.F5_Role_Codes_rcode" ) REFERENCES "F15.F5_Role_Codes" ( rcode ) ;
+ALTER TABLE Contacts ADD CONSTRAINT "Contacts_F15_F5_Role_Codes_FK" FOREIGN KEY ( "F15_F5_Role_Codes_rcode" ) REFERENCES "F15_F5_Role_Codes" ( rcode ) ;
 
-ALTER TABLE "F15.F5_Cmt" ADD CONSTRAINT "F15.F5_Cmt_F15.F5_Emp_FK" FOREIGN KEY ( "F15.F5_Emp_emp_id" ) REFERENCES "F15.F5_Emp" ( emp_id ) ;
+ALTER TABLE "F15_F5_Cmt" ADD CONSTRAINT "F15_F5_Cmt_F15_F5_Emp_FK" FOREIGN KEY ( "F15_F5_Emp_emp_id" ) REFERENCES "F15_F5_Emp" ( emp_id ) ;
 
-ALTER TABLE "F15.F5_Cmt" ADD CONSTRAINT "F15.F5_Cmt_F15.F5_RFE_FK" FOREIGN KEY ( "F15.F5_RFE_rfe_id" ) REFERENCES "F15.F5_RFE" ( rfe_id ) ;
+ALTER TABLE "F15_F5_Cmt" ADD CONSTRAINT "F15_F5_Cmt_F15_F5_RFE_FK" FOREIGN KEY ( "F15_F5_RFE_rfe_id" ) REFERENCES "F15_F5_RFE" ( rfe_id ) ;
 
-ALTER TABLE "F15.F5_Lab" ADD CONSTRAINT "F15.F5_Lab_F15.F5_Emp_FK" FOREIGN KEY ( "F15.F5_Emp_emp_id" ) REFERENCES "F15.F5_Emp" ( emp_id ) ;
+ALTER TABLE "F15_F5_Lab" ADD CONSTRAINT "F15_F5_Lab_F15_F5_Emp_FK" FOREIGN KEY ( "F15_F5_Emp_emp_id" ) REFERENCES "F15_F5_Emp" ( emp_id ) ;
 
-ALTER TABLE "F15.F5_Project" ADD CONSTRAINT "F15.F5_Project_F15.F5_Lab_FK" FOREIGN KEY ( "F15.F5_Lab_lab_id" ) REFERENCES "F15.F5_Lab" ( lab_id ) ;
+ALTER TABLE "F15_F5_Project" ADD CONSTRAINT "F15_F5_Project_F15_F5_Lab_FK" FOREIGN KEY ( "F15_F5_Lab_lab_id" ) REFERENCES "F15_F5_Lab" ( lab_id ) ;
 
-ALTER TABLE "F15.F5_RFE_Tasks" ADD CONSTRAINT "F15.F5_RFE_Tasks_F15.F5_RFE_FK" FOREIGN KEY ( "F15.F5_RFE_rfe_id" ) REFERENCES "F15.F5_RFE" ( rfe_id ) ;
+ALTER TABLE "F15_F5_RFE_Tasks" ADD CONSTRAINT "F15_F5_RFE_Tasks_F15_F5_RFE_FK" FOREIGN KEY ( "F15_F5_RFE_rfe_id" ) REFERENCES "F15_F5_RFE" ( rfe_id ) ;
 
-ALTER TABLE "F15.F5_Sts" ADD CONSTRAINT "F15.F5_Sts_F15.F5_RFE_FK" FOREIGN KEY ( "F15.F5_RFE_rfe_id" ) REFERENCES "F15.F5_RFE" ( rfe_id ) ;
+ALTER TABLE "F15_F5_Sts" ADD CONSTRAINT "F15_F5_Sts_F15_F5_RFE_FK" FOREIGN KEY ( "F15_F5_RFE_rfe_id" ) REFERENCES "F15_F5_RFE" ( rfe_id ) ;
 
-ALTER TABLE "F15.F5_Sts" ADD CONSTRAINT "F15.F5_Sts_F15.F5_sc_FK" FOREIGN KEY ( "F15.F5_sc_scode" ) REFERENCES "F15.F5_sc" ( scode ) ;
+ALTER TABLE "F15_F5_Sts" ADD CONSTRAINT "F15_F5_Sts_F15_F5_sc_FK" FOREIGN KEY ( "F15_F5_sc_scode" ) REFERENCES "F15_F5_sc" ( scode ) ;
 
-ALTER TABLE "F15.F5_sh" ADD CONSTRAINT "F15.F5_sh_F15.F5_RFE_FK" FOREIGN KEY ( "F15.F5_RFE_rfe_id" ) REFERENCES "F15.F5_RFE" ( rfe_id ) ;
+ALTER TABLE "F15_F5_sh" ADD CONSTRAINT "F15_F5_sh_F15_F5_RFE_FK" FOREIGN KEY ( "F15_F5_RFE_rfe_id" ) REFERENCES "F15_F5_RFE" ( rfe_id ) ;
 
-ALTER TABLE "F15.F5_sh" ADD CONSTRAINT "F15.F5_sh_F15.F5_Sts_FK" FOREIGN KEY ( "F15.F5_Sts_status_id" ) REFERENCES "F15.F5_Sts" ( status_id ) ;
+ALTER TABLE "F15_F5_sh" ADD CONSTRAINT "F15_F5_sh_F15_F5_Sts_FK" FOREIGN KEY ( "F15_F5_Sts_status_id" ) REFERENCES "F15_F5_Sts" ( status_id ) ;
 
 
 -- Oracle SQL Developer Data Modeler Summary Report: 
