@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="26C656A5-B934-11DE-21CA-D2DF086E4F4F" name="Comments">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:20:54 UTC</createdTime>
+<generatorID>832DEE69-0B4E-FDD5-A518-6760B9C7833D</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="686A493C-1A08-4514-D07A-6FD12B384C15" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="comments" id="AFC09BF9-DAA3-017B-FA16-42C6A80B96C8">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:20:54 UTC</createdTime>
+<generatorID>5186E4A4-BC90-BFCD-2464-AA8064042A4D</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="686A493C-1A08-4514-D07A-6FD12B384C15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="comment entry data" id="CEBFDBE9-FBB2-C836-A718-7D093D11EAC7">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:20:54 UTC</createdTime>
+<generatorID>237C9BDE-3258-AC7A-7EF2-FE16464F3380</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="686A493C-1A08-4514-D07A-6FD12B384C15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="comment_id" id="9F91E471-F9E9-2B5E-E537-D1EB0C32C81B">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:22:49 UTC</createdTime>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="686A493C-1A08-4514-D07A-6FD12B384C15" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rfe id" id="22512323-81BF-6D8D-E8A2-F856B526B895">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:23:26 UTC</createdTime>
+<generatorID>38F86770-86E2-806E-AF89-0447DD22E37B</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="686A493C-1A08-4514-D07A-6FD12B384C15" value="true"/>
+</engineerTo>
+<referedAttribute>0A42AEE9-2E90-2CB2-29EB-447F60B4BAA6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="emp id" id="4CE8D26C-5BC8-15A0-CDD1-6073438BAA5D">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:23:43 UTC</createdTime>
+<generatorID>0039DB11-287A-712D-2BF1-8CB9F0B550BD</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="686A493C-1A08-4514-D07A-6FD12B384C15" value="true"/>
+</engineerTo>
+<referedAttribute>D3A40950-17AE-CC77-4C4F-D2B9E0E797A5</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="7AB26BCA-5A75-E3F2-C493-B107D8971CB7" name="Comments PK">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:20:54 UTC</createdTime>
+<generatorID>D2797586-A055-7EFA-B4A8-94651030DE8C</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="686A493C-1A08-4514-D07A-6FD12B384C15" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>9F91E471-F9E9-2B5E-E537-D1EB0C32C81B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

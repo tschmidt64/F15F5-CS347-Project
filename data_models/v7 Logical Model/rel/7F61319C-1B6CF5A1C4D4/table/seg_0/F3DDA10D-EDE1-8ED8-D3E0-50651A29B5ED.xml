@@ -1,0 +1,140 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F3DDA10D-EDE1-8ED8-D3E0-50651A29B5ED" name="F15F5_Doc">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:28:57 UTC</createdTime>
+<generatorID>A6A35DE9-65C5-121C-AFDC-E70EDDC1EE4B</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="doc_id" id="1BA7698E-8B87-818C-239A-C2824013CD17">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:28:57 UTC</createdTime>
+<generatorID>30E040A8-D075-6FF4-6EC4-091F069286A3</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="doc" id="2EE909A6-1861-120B-EAAA-A8CA53FF77C7">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:28:57 UTC</createdTime>
+<generatorID>7885E637-EBC0-6940-E9AD-375F77358BB7</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="file_comment" id="AF53EDAF-EFC3-5BDE-A93F-B63A4BB248F5">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:28:57 UTC</createdTime>
+<generatorID>97E42599-8EAC-8C31-CA44-71656FEBFC44</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tags" id="F8912787-B0C2-E7E7-8E0B-214341785468">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:28:57 UTC</createdTime>
+<generatorID>62D0FF35-5DFC-D641-2CDF-24AFC978FEDB</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="file_mimetype" id="6E2684C0-CB41-FF7A-18F8-44830817345F">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:28:57 UTC</createdTime>
+<generatorID>6B73462C-812B-FB7D-F48C-23A0F811B36A</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>512</dataTypeSize>
+<ownDataTypeParameters>512,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="file_charset" id="67F28CF5-E8ED-CAE6-4250-2C0C180E73D1">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:28:57 UTC</createdTime>
+<generatorID>90F26CA7-B64C-3958-8FBB-C6499EAB1072</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>512</dataTypeSize>
+<ownDataTypeParameters>512,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="file_name" id="1B2D665B-D713-82BD-0D32-84536E6AE58D">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:28:57 UTC</createdTime>
+<generatorID>EF1963DB-CD04-30C0-DB28-A6367E243E7B</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="F15F5_RFE_rfe_id" id="690B591A-FEC8-4F04-74C4-F8B6A546B3C5">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:28:57 UTC</createdTime>
+<generatorID>F561C083-2B23-3086-3059-082848A07F8A</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B6D5DBC2-93BA-B9CA-33C3-02CFCEE16370" referredColumn="4FDE3789-972B-B717-6F7A-27CF8B128186"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="642D05AC-52C6-61A0-2CC8-B08FC40F9645" name="F15F5_Doc_PK">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:28:57 UTC</createdTime>
+<generatorID>64EF0C16-AEA1-C230-91C4-811FCB0F0828</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1BA7698E-8B87-818C-239A-C2824013CD17"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D5F197DF-A1C9-4B55-5B94-D138BF5913E9" name="F15F5_Doc_F15F5_RFE_FK">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:28:57 UTC</createdTime>
+<generatorID>F0106FB6-FCC8-EB8A-3E02-1CC444772143</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="690B591A-FEC8-4F04-74C4-F8B6A546B3C5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

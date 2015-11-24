@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8410647E-FB3B-4742-114E-5900D847CF74" name="F15F5_Tasks">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:28:57 UTC</createdTime>
+<generatorID>31A59987-C795-9776-FE72-AEE1A7625E70</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="task_abbreviation" id="CA773094-2BB1-332C-5DDC-296478E5C649">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:28:57 UTC</createdTime>
+<generatorID>D016D796-7EC5-75D0-318F-2F47F6B2A87E</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="task_description" id="A50498C1-7461-E7C0-1F10-9059019812CB">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:28:57 UTC</createdTime>
+<generatorID>ADFDD0AE-39DE-E9B1-8A88-16078CEFA236</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="task_id" id="D1DB54E6-B7B0-D788-7466-6965A4BF259D">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:28:57 UTC</createdTime>
+<generatorID>331E92B3-9AD0-4829-29F1-BE9C2A46C674</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3BFEC9CD-5B99-33AB-45A2-65C71BD5F714" name="F15F5_Tasks_PK">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:28:57 UTC</createdTime>
+<generatorID>0D8E6AC4-9320-7B12-8A1E-F0B85BE09AA3</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D1DB54E6-B7B0-D788-7466-6965A4BF259D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

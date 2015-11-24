@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="38417400-D291-CE7B-54A7-6E00932F33ED" name="F15F5_S_hist">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 21:50:57 UTC</createdTime>
+<ownerDesignName>v7 Conceptual Model</ownerDesignName>
+<engineerTo>
+<item key="C917C185-8A77-9A02-DF3B-1E009B0A44B7" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="sh_id" id="4EB1A9AF-4ED8-6ADA-5A8D-20CF402BF9D5">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 21:51:13 UTC</createdTime>
+<ownerDesignName>v7 Conceptual Model</ownerDesignName>
+<engineerTo>
+<item key="C917C185-8A77-9A02-DF3B-1E009B0A44B7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="status_code" id="CE2F235D-EFE6-7B19-2F20-C96277361392">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 21:51:13 UTC</createdTime>
+<ownerDesignName>v7 Conceptual Model</ownerDesignName>
+<engineerTo>
+<item key="C917C185-8A77-9A02-DF3B-1E009B0A44B7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="effective_date" id="97C1BCCF-62FF-EF62-555C-A3969619F295">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 21:51:13 UTC</createdTime>
+<ownerDesignName>v7 Conceptual Model</ownerDesignName>
+<engineerTo>
+<item key="C917C185-8A77-9A02-DF3B-1E009B0A44B7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rfe_id" id="5C9F3E34-C175-0600-A8D8-EB2C6583F4AC">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 21:54:21 UTC</createdTime>
+<generatorID>153AE2E0-DC08-D8B3-56B0-92DFAB49CE04</generatorID>
+<ownerDesignName>v7 Conceptual Model</ownerDesignName>
+<engineerTo>
+<item key="C917C185-8A77-9A02-DF3B-1E009B0A44B7" value="true"/>
+</engineerTo>
+<referedAttribute>0F63F0F6-59B3-2230-625B-ED2CD1FBC247</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="449F94F2-412D-A9FD-6BF6-7DC01BB751B6" name="F15F5_S_hist PK">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 21:51:33 UTC</createdTime>
+<ownerDesignName>v7 Conceptual Model</ownerDesignName>
+<engineerTo>
+<item key="C917C185-8A77-9A02-DF3B-1E009B0A44B7" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4EB1A9AF-4ED8-6ADA-5A8D-20CF402BF9D5</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

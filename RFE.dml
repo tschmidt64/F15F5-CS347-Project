@@ -1,0 +1,359 @@
+truncate table F15F5_Auth;
+truncate table F15F5_Lab;
+truncate table F15F5_Emp;
+truncate table F15F5_Comment;
+truncate table F15F5_App;
+truncate table F15F5_Requestors;;
+truncate table F15F5_Doc;
+truncate table F15F5_Status;
+truncate table F15F5_RFE;
+truncate table F15F5_S_Hist;
+truncate table F15F5_RFE_Tasks;
+truncate table F15F5_Tasks;
+
+
+ -- Trigger Definitions: 
+CREATE OR REPLACE TRIGGER  "AFTER_UPDATE_INSERT_RFE" 
+AFTER UPDATE OR INSERT ON F15F5_RFE
+FOR EACH ROW
+DECLARE
+    new_id INTEGER;
+    rfe_status_str VARCHAR2(50);
+BEGIN
+    SELECT (NVL(max(sh_id), 0) + 1)
+    INTO new_id
+    FROM F15F5_S_Hist;
+
+    SELECT rfe_status
+    INTO rfe_status_str
+    FROM F15F5_Status
+    WHERE :NEW.F15F5_Status_status_id = status_id;
+
+    INSERT INTO F15F5_S_Hist
+    (sh_id, F15F5_RFE_rfe_id, status_code, effective_date)
+    VALUES
+    (new_id, :NEW.rfe_id, rfe_status_str, SYSDATE);  
+END;
+/
+
+CREATE OR REPLACE TRIGGER  "RFE_ID_BEFORE_INSERT" 
+BEFORE INSERT
+ON F15F5_RFE
+FOR EACH ROW
+BEGIN
+    :NEW.F15F5_STATUS_STATUS_ID := 120;
+    :NEW.CREATED := SYSDATE();
+    :NEW.ROW_VERSION_NUMBER := 0;
+    :NEW.UPDATED := SYSDATE();
+END;
+/
+
+alter trigger "RFE_ID_BEFORE_INSERT" disable;
+alter trigger "AFTER_UPDATE_INSERT_RFE" disable;
+
+
+SELECT 'RECALL' as RECALLED, rfe_id, RFE_STATUS, status_id, F15F5_EMP_EMP_ID as EMP_ID, EXPLANATION, ALT_PROTECTIONS, APPROVAL_REVIEW_DATE, F15F5_STATUS_STATUS_ID
+FROM F15F5_RFE
+JOIN F15F5_STATUS
+ON F15F5_RFE.F15F5_STATUS_STATUS_ID = F15F5_STATUS.STATUS_ID
+WHERE 	F15F5_EMP_EMP_ID = :P2_EID
+		AND F15F5_STATUS_STATUS_ID IN (121,124,142,141,160)
+
+
+
+SELECT 'SUBMIT' as SUBMIT, rfe_id, F15F5_EMP_EMP_ID as EMP_ID, EXPLANATION, ALT_PROTECTIONS, APPROVAL_REVIEW_DATE, F15F5_STATUS_STATUS_ID, RFE_STATUS 
+FROM F15F5_RFE
+JOIN F15F5_STATUS
+ON F15F5_RFE.F15F5_STATUS_STATUS_ID = F15F5_STATUS.STATUS_ID
+WHERE (
+		F15F5_EMP_EMP_ID = :P2_EID
+		AND F15F5_STATUS_STATUS_ID IN (120,123,122)
+	  )
+	  OR
+	  (
+	  	:P2_ETYPE = 'Admin'
+	  	AND F15F5_STATUS_STATUS_ID = 120
+	  	AND F15F5_EMP_EMP_ID != :P2_EID 
+	  )
+	  OR
+	  (
+	  	:P2_ETYPE = 'Admin'
+	  	AND F15F5_STATUS_STATUS_ID IN (120,123,122)
+	  	AND F15F5_EMP_EMP_ID = :P2_EID 
+	  )
+
+
+SELECT 'APPROVE' as APROVE, RFE_ID, EXPLANATION, ALT_PROTECTIONS, APPROVAL_REVIEW_DATE, F15F5_EMP_EMP_ID as EMP_ID, F15F5_STATUS_STATUS_ID
+FROM F15F5_RFE
+WHERE F15F5_STATUS_STATUS_ID = 121
+
+
+
+BEGIN
+IF :P2_ETYPE = 'Admin' THEN
+    RETURN TRUE;
+ELSE
+    RETURN FALSE;
+END IF;
+END;
+
+
+DECLARE
+EID integer;
+BEGIN
+SELECT EMP_ID
+INTO EID 
+FROM F15F5_EMP
+WHERE EMP_ID = :P1_EMP;
+END;
+
+
+select emp_id from F15F5_EMP where emp_id = :P1_EMP
+
+
+insert into F15F5_Auth
+(
+auth_id,
+right
+)
+values
+(
+11,
+'Yeah'
+)
+//140
+
+insert into F15F5_Emp
+(
+    emp_id, 
+    emp_status, 
+    emp_email, 
+    emp_lab, 
+    emp_name, 
+    emp_office, 
+    emp_phone, 
+    status_eff_date, 
+    F15F5_Lab_lab_id, 
+    type, 
+    F15F5_Auth_auth_id
+)
+values
+(
+    1,
+    'A',
+    'emp1@ut.edu',
+    'lab1',
+    'Jose Cuervo',
+    'NYC',
+    12139219,
+    TO_DATE('2001/01/01', 'yyyy/mm/dd'),
+    100,
+    'LabDirector',
+    120
+);
+
+insert into F15F5_Emp
+(
+    emp_id, 
+    emp_status, 
+    emp_email, 
+    emp_lab, 
+    emp_name, 
+    emp_office, 
+    emp_phone, 
+    status_eff_date, 
+    F15F5_Lab_lab_id, 
+    type, 
+    F15F5_Auth_auth_id
+)
+values
+(
+    99,
+    'A',
+    '99@ut.edu',
+    'lab0',
+    'Pedro Calle',
+    'NYC',
+    12132,
+    TO_DATE('2009/09/09', 'yyyy/mm/dd'),
+    100,
+    'LabDirector',
+    120
+);
+
+
+insert into F15F5_Status
+(
+    status_id,
+    rfe_status ,
+    description
+)
+values
+(
+    0,
+    'pending',
+    'testdescrptstatus0'
+    
+
+); -- status id is 100
+
+insert into F15F5_RFE
+(
+    rfe_id,
+    explanation,
+    alt_protections,
+    approval_review_date,
+    F15F5_Status_status_id,
+    F15F5_Emp_emp_id
+)
+values
+(
+    0,
+    'TestREF0',
+    'Just labdir',
+    TO_DATE('2000/01/01', 'yyyy/mm/dd'),
+    100,
+    101
+); --RFE id is 100
+
+
+update F15F5_Emp
+set F15F5_Lab_lab_id = 101
+Where emp_id = 161
+
+
+select lab_name, lab_id, emp_name from F15F5_Lab where F15F5_Emp.F15F5_Auth_auth_id = auth_id
+
+
+SELECT category_name, count(product_id) as count, max(list_price) as most_expensive
+FROM CATEGORIES JOIN PRODUCTS
+  ON PRODUCTS.CATEGORY_ID = CATEGORIES.CATEGORY_ID
+GROUP BY category_name
+ORDER BY count(product_id) DESC;
+
+
+select right from F15F5_Auth join F15F5_Emp ON F15F5_Auth.auth_id = F15F5_Emp.F15F5_Auth_auth_id
+
+select lab_name from F15F5_Lab join F15F5_Emp ON F15F5_Lab.Lab_id = F15F5_Emp.F15F5_Lab_lab_id
+
+
+insert into F15F5_Status
+(
+    status_id,
+    rfe_status,
+    description
+)
+values
+(
+    1,
+    'ENTERED',
+    'The RFE has been created but has not yet been submitted for approval.'
+); 
+
+insert into F15F5_Status
+(
+    status_id,
+    rfe_status,
+    description
+)
+values
+(
+    2,
+    'SUBMITTED',
+    'The RFE has been submitted to the Lab System Administrator for approval.'
+); 
+
+insert into F15F5_Status
+(
+    status_id,
+    rfe_status,
+    description
+)
+values
+(
+    3,
+    'RETURNED',
+    'The RFE has been returned for further information or clarification. Once Submitted again, it will follow the same routing as an Entered RFE.'
+); 
+
+insert into F15F5_Status
+(
+    status_id,
+    rfe_status,
+    description
+)
+values
+(
+    4,
+    'RECALLED',
+    'The requestor has recalled an RFE that has not yet reached final approval. Once Submitted again, it will follow the same routing as an Entered RFE.'
+); 
+
+insert into F15F5_Status
+(
+    status_id,
+    rfe_status,
+    description
+)
+values
+(
+    5,
+    'REJECTED',
+    'The RFE has been rejected and cannot be implemented.'
+); 
+
+insert into F15F5_Status
+(
+    status_id,
+    rfe_status,
+    description
+)
+values
+(
+    6,
+    'SA APPROVED',
+    'The Lab System Administrator has approved the RFE; it has been submitted for Lab Director approval.'
+); 
+
+insert into F15F5_Status
+(
+    status_id,
+    rfe_status,
+    description
+)
+values
+(
+    7,
+    'LD APPROVAL',
+    'The Lab Director has approved the RFE; it has been submitted for Network Security Panel approval.'
+); 
+
+insert into F15F5_Status
+(
+    status_id,
+    rfe_status,
+    description
+)
+values
+(
+    8,
+    'CH APPROVAL',
+    'The Lab Director has approved the RFE; it has been submitted to the Chairperson of Security Panel approval.'
+); 
+
+insert into F15F5_Status
+(
+    status_id,
+    rfe_status,
+    description
+)
+values
+(
+    9,
+    'FINAL APPROVED',
+    'The Executive Director''s Office has given final approval for the RFE and it may be implemented.'
+); 
+
+alter trigger "RFE_ID_BEFORE_INSERT" enable;
+alter trigger "AFTER_UPDATE_INSERT_RFE" enable;
+

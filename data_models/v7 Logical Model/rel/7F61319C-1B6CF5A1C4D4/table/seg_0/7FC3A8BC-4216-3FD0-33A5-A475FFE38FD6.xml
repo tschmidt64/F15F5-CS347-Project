@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7FC3A8BC-4216-3FD0-33A5-A475FFE38FD6" name="F15F5_Contacts">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:28:57 UTC</createdTime>
+<generatorID>F52507AD-7F76-9F87-136A-FF8BD8C1E5AB</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="contact_id" id="2180E8C2-207C-CEAA-F046-F0A6BBC99761">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:28:57 UTC</createdTime>
+<generatorID>0CA0BB94-7DE9-945C-6448-5D06D1E75217</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="F15F5_EMP_emp_id" id="AC2AE0F0-1966-7E07-900E-45FB84F8642F">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:28:57 UTC</createdTime>
+<generatorID>202DF662-BE02-C245-201E-B6EA749304D3</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="882D0BEE-F751-0CE5-F382-905B6484EBAD" referredColumn="60A79482-9DD5-3F4F-75E3-D44E7194E060"/>
+</associations>
+</Column>
+<Column name="F15F5_RFE_rfe_id" id="6FC9C367-E853-64E7-0D13-4106F492809E">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:28:57 UTC</createdTime>
+<generatorID>E14B2986-99DE-90B2-0257-6DFFAA39B400</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A0F4A5BC-DDFF-1F1A-F394-16DBB21BDE2A" referredColumn="4FDE3789-972B-B717-6F7A-27CF8B128186"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9B7EC6AF-9BC8-53A8-AA5D-9EFD30E30119" name="F15F5_Contacts_PK">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:28:57 UTC</createdTime>
+<generatorID>B687B942-BEDC-32F5-4483-046021C7C42B</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2180E8C2-207C-CEAA-F046-F0A6BBC99761"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E790C740-536C-DA0D-454E-3832BC6F313C" name="F15F5_Contacts_F15F5_EMP_FK">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:28:57 UTC</createdTime>
+<generatorID>BF8E05C4-7F93-D2A7-0DB8-13488FB793F2</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AC2AE0F0-1966-7E07-900E-45FB84F8642F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BFFDD25D-F259-DEE6-9E65-C68D573B7F53" name="F15F5_Contacts_F15F5_RFE_FK">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:28:57 UTC</createdTime>
+<generatorID>FDE5D3BF-A95B-7F8B-FDE3-FAE73E2CCC86</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6FC9C367-E853-64E7-0D13-4106F492809E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

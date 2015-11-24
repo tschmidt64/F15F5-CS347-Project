@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5EBA2A48-5086-1666-FEEC-5DAE5F170D8C" name="F15F5 Auth">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:20:54 UTC</createdTime>
+<generatorID>E2728C5E-77FD-D17C-4DD8-69F3371DC879</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="686A493C-1A08-4514-D07A-6FD12B384C15" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="auth id" id="1D5C2001-A149-A147-645A-0F52512F25AD">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:20:54 UTC</createdTime>
+<generatorID>7922242F-7374-BBEC-2202-2C41B267D70D</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="686A493C-1A08-4514-D07A-6FD12B384C15" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="right" id="EC58FD52-E90B-EDB2-F142-311D24EBA7A9">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:20:54 UTC</createdTime>
+<generatorID>AEED06C1-4691-A68B-2353-729076777EC1</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="686A493C-1A08-4514-D07A-6FD12B384C15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0CF1CE75-D386-0DCA-BCFA-312AA18758AD" name="F15F5 Auth PK">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:20:54 UTC</createdTime>
+<generatorID>250D141B-AA72-9C3E-BF73-70A277A7031E</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="686A493C-1A08-4514-D07A-6FD12B384C15" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>1D5C2001-A149-A147-645A-0F52512F25AD</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

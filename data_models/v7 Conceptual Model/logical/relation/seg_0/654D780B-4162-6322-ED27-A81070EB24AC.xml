@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Comments" directorySegmentName="seg_0" id="654D780B-4162-6322-ED27-A81070EB24AC">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:05:05 UTC</createdTime>
+<ownerDesignName>v7 Conceptual Model</ownerDesignName>
+<engineerTo>
+<item key="C917C185-8A77-9A02-DF3B-1E009B0A44B7" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>58939E53-4426-C5E7-F9A8-14042C5B22EF</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>2629AF36-5DE6-9645-5848-147FCD3D9B3F</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="comments" id="8074C4EB-ABE7-6C74-7F8D-945AE10B0D81">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:05:36 UTC</createdTime>
+<ownerDesignName>v7 Conceptual Model</ownerDesignName>
+<engineerTo>
+<item key="C917C185-8A77-9A02-DF3B-1E009B0A44B7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+</attribute>
+<attribute name="comment_entry_data" id="C6241C3F-A130-7FE1-3D1B-3C38D11BD230">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:05:36 UTC</createdTime>
+<ownerDesignName>v7 Conceptual Model</ownerDesignName>
+<engineerTo>
+<item key="C917C185-8A77-9A02-DF3B-1E009B0A44B7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</attribute>
+</attributes>
+</Relation>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Requestors" directorySegmentName="seg_0" id="A89CDAD1-CC64-E007-5C92-4257D027EF2A">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:04:42 UTC</createdTime>
+<ownerDesignName>v7 Conceptual Model</ownerDesignName>
+<engineerTo>
+<item key="C917C185-8A77-9A02-DF3B-1E009B0A44B7" value="true"/>
+</engineerTo>
+<sourcePk>3B6FE226-092E-3FA9-EC66-C24CA520D66D</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>58939E53-4426-C5E7-F9A8-14042C5B22EF</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>2629AF36-5DE6-9645-5848-147FCD3D9B3F</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

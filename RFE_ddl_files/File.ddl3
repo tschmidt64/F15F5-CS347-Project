@@ -1,0 +1,508 @@
+DROP SEQUENCE F15F5_App_seq ; 
+create sequence F15F5_App_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+
+create or replace trigger F15F5_App_PK_trig 
+before insert on F15F5_App
+for each row 
+begin 
+select F15F5_App_seq.nextval into :new.approver_id from dual; 
+end; 
+/
+alter table F15F5_App add created date ; 
+alter table F15F5_App add created_by VARCHAR2 (255) ; 
+alter table F15F5_App add row_version_number integer ; 
+alter table F15F5_App add updated date ; 
+alter table F15F5_App add updated_by VARCHAR2 (255) ; 
+/
+create or replace trigger F15F5_App_AUD_trig 
+before insert or update on F15F5_App 
+for each row 
+begin 
+  if inserting then 
+    :new.created := localtimestamp; 
+    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.row_version_number := 1; 
+  elsif updating then 
+    :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
+  end if; 
+  if inserting or updating then 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+  end if; 
+end; 
+/
+
+DROP SEQUENCE F15F5_Auth_seq ; 
+create sequence F15F5_Auth_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+
+create or replace trigger F15F5_Auth_PK_trig 
+before insert on F15F5_Auth
+for each row 
+begin 
+select F15F5_Auth_seq.nextval into :new.auth_id from dual; 
+end; 
+/
+alter table F15F5_Auth add created date ; 
+alter table F15F5_Auth add created_by VARCHAR2 (255) ; 
+alter table F15F5_Auth add row_version_number integer ; 
+alter table F15F5_Auth add updated date ; 
+alter table F15F5_Auth add updated_by VARCHAR2 (255) ; 
+/
+create or replace trigger F15F5_Auth_AUD_trig 
+before insert or update on F15F5_Auth 
+for each row 
+begin 
+  if inserting then 
+    :new.created := localtimestamp; 
+    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.row_version_number := 1; 
+  elsif updating then 
+    :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
+  end if; 
+  if inserting or updating then 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+  end if; 
+end; 
+/
+
+DROP SEQUENCE F15F5_Comt_seq ; 
+create sequence F15F5_Comt_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+
+create or replace trigger F15F5_Comt_PK_trig 
+before insert on F15F5_Comt
+for each row 
+begin 
+select F15F5_Comt_seq.nextval into :new.comt_id from dual; 
+end; 
+/
+alter table F15F5_Comt add created date ; 
+alter table F15F5_Comt add created_by VARCHAR2 (255) ; 
+alter table F15F5_Comt add row_version_number integer ; 
+alter table F15F5_Comt add updated date ; 
+alter table F15F5_Comt add updated_by VARCHAR2 (255) ; 
+/
+create or replace trigger F15F5_Comt_AUD_trig 
+before insert or update on F15F5_Comt 
+for each row 
+begin 
+  if inserting then 
+    :new.created := localtimestamp; 
+    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.row_version_number := 1; 
+  elsif updating then 
+    :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
+  end if; 
+  if inserting or updating then 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+  end if; 
+end; 
+/
+
+DROP SEQUENCE F15F5_Doc_seq ; 
+create sequence F15F5_Doc_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+
+create or replace trigger F15F5_Doc_PK_trig 
+before insert on F15F5_Doc
+for each row 
+begin 
+select F15F5_Doc_seq.nextval into :new.doc_id from dual; 
+end; 
+/
+alter table F15F5_Doc add created date ; 
+alter table F15F5_Doc add created_by VARCHAR2 (255) ; 
+alter table F15F5_Doc add row_version_number integer ; 
+alter table F15F5_Doc add updated date ; 
+alter table F15F5_Doc add updated_by VARCHAR2 (255) ; 
+/
+create or replace trigger F15F5_Doc_AUD_trig 
+before insert or update on F15F5_Doc 
+for each row 
+begin 
+  if inserting then 
+    :new.created := localtimestamp; 
+    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.row_version_number := 1; 
+  elsif updating then 
+    :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
+  end if; 
+  if inserting or updating then 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+  end if; 
+end; 
+/
+
+DROP SEQUENCE F15F5_Emp_seq ; 
+create sequence F15F5_Emp_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+
+create or replace trigger F15F5_Emp_PK_trig 
+before insert on F15F5_Emp
+for each row 
+begin 
+select F15F5_Emp_seq.nextval into :new.emp_id from dual; 
+end; 
+/
+alter table F15F5_Emp add created date ; 
+alter table F15F5_Emp add created_by VARCHAR2 (255) ; 
+alter table F15F5_Emp add row_version_number integer ; 
+alter table F15F5_Emp add updated date ; 
+alter table F15F5_Emp add updated_by VARCHAR2 (255) ; 
+/
+create or replace trigger F15F5_Emp_AUD_trig 
+before insert or update on F15F5_Emp 
+for each row 
+begin 
+  if inserting then 
+    :new.created := localtimestamp; 
+    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.row_version_number := 1; 
+  elsif updating then 
+    :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
+  end if; 
+  if inserting or updating then 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+  end if; 
+end; 
+/
+
+DROP SEQUENCE F15F5_Lab_seq ; 
+create sequence F15F5_Lab_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+
+create or replace trigger F15F5_Lab_PK_trig 
+before insert on F15F5_Lab
+for each row 
+begin 
+select F15F5_Lab_seq.nextval into :new.lab_id from dual; 
+end; 
+/
+alter table F15F5_Lab add created date ; 
+alter table F15F5_Lab add created_by VARCHAR2 (255) ; 
+alter table F15F5_Lab add row_version_number integer ; 
+alter table F15F5_Lab add updated date ; 
+alter table F15F5_Lab add updated_by VARCHAR2 (255) ; 
+/
+create or replace trigger F15F5_Lab_AUD_trig 
+before insert or update on F15F5_Lab 
+for each row 
+begin 
+  if inserting then 
+    :new.created := localtimestamp; 
+    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.row_version_number := 1; 
+  elsif updating then 
+    :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
+  end if; 
+  if inserting or updating then 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+  end if; 
+end; 
+/
+
+DROP SEQUENCE F15F5_RFE_seq ; 
+create sequence F15F5_RFE_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+
+create or replace trigger F15F5_RFE_PK_trig 
+before insert on F15F5_RFE
+for each row 
+begin 
+select F15F5_RFE_seq.nextval into :new.rfe_id from dual; 
+end; 
+/
+alter table F15F5_RFE add created date ; 
+alter table F15F5_RFE add created_by VARCHAR2 (255) ; 
+alter table F15F5_RFE add row_version_number integer ; 
+alter table F15F5_RFE add updated date ; 
+alter table F15F5_RFE add updated_by VARCHAR2 (255) ; 
+/
+create or replace trigger F15F5_RFE_AUD_trig 
+before insert or update on F15F5_RFE 
+for each row 
+begin 
+  if inserting then 
+    :new.created := localtimestamp; 
+    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.row_version_number := 1; 
+  elsif updating then 
+    :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
+  end if; 
+  if inserting or updating then 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+  end if; 
+end; 
+/
+
+DROP SEQUENCE F15F5_RFE_Tasks_seq ; 
+create sequence F15F5_RFE_Tasks_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+
+create or replace trigger F15F5_RFE_Tasks_PK_trig 
+before insert on F15F5_RFE_Tasks
+for each row 
+begin 
+select F15F5_RFE_Tasks_seq.nextval into :new.rfe_task_id from dual; 
+end; 
+/
+alter table F15F5_RFE_Tasks add created date ; 
+alter table F15F5_RFE_Tasks add created_by VARCHAR2 (255) ; 
+alter table F15F5_RFE_Tasks add row_version_number integer ; 
+alter table F15F5_RFE_Tasks add updated date ; 
+alter table F15F5_RFE_Tasks add updated_by VARCHAR2 (255) ; 
+/
+create or replace trigger F15F5_RFE_Tasks_AUD_trig 
+before insert or update on F15F5_RFE_Tasks 
+for each row 
+begin 
+  if inserting then 
+    :new.created := localtimestamp; 
+    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.row_version_number := 1; 
+  elsif updating then 
+    :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
+  end if; 
+  if inserting or updating then 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+  end if; 
+end; 
+/
+
+DROP SEQUENCE F15F5_Requestors_seq ; 
+create sequence F15F5_Requestors_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+
+create or replace trigger F15F5_Requestors_PK_trig 
+before insert on F15F5_Requestors
+for each row 
+begin 
+select F15F5_Requestors_seq.nextval into :new.requestor_id from dual; 
+end; 
+/
+alter table F15F5_Requestors add created date ; 
+alter table F15F5_Requestors add created_by VARCHAR2 (255) ; 
+alter table F15F5_Requestors add row_version_number integer ; 
+alter table F15F5_Requestors add updated date ; 
+alter table F15F5_Requestors add updated_by VARCHAR2 (255) ; 
+/
+create or replace trigger F15F5_Requestors_AUD_trig 
+before insert or update on F15F5_Requestors 
+for each row 
+begin 
+  if inserting then 
+    :new.created := localtimestamp; 
+    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.row_version_number := 1; 
+  elsif updating then 
+    :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
+  end if; 
+  if inserting or updating then 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+  end if; 
+end; 
+/
+
+DROP SEQUENCE F15F5_S_Hist_seq ; 
+create sequence F15F5_S_Hist_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+
+create or replace trigger F15F5_S_Hist_PK_trig 
+before insert on F15F5_S_Hist
+for each row 
+begin 
+select F15F5_S_Hist_seq.nextval into :new.sh_id from dual; 
+end; 
+/
+alter table F15F5_S_Hist add created date ; 
+alter table F15F5_S_Hist add created_by VARCHAR2 (255) ; 
+alter table F15F5_S_Hist add row_version_number integer ; 
+alter table F15F5_S_Hist add updated date ; 
+alter table F15F5_S_Hist add updated_by VARCHAR2 (255) ; 
+/
+create or replace trigger F15F5_S_Hist_AUD_trig 
+before insert or update on F15F5_S_Hist 
+for each row 
+begin 
+  if inserting then 
+    :new.created := localtimestamp; 
+    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.row_version_number := 1; 
+  elsif updating then 
+    :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
+  end if; 
+  if inserting or updating then 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+  end if; 
+end; 
+/
+
+DROP SEQUENCE F15F5_Status_seq ; 
+create sequence F15F5_Status_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+
+create or replace trigger F15F5_Status_PK_trig 
+before insert on F15F5_Status
+for each row 
+begin 
+select F15F5_Status_seq.nextval into :new.status_id from dual; 
+end; 
+/
+alter table F15F5_Status add created date ; 
+alter table F15F5_Status add created_by VARCHAR2 (255) ; 
+alter table F15F5_Status add row_version_number integer ; 
+alter table F15F5_Status add updated date ; 
+alter table F15F5_Status add updated_by VARCHAR2 (255) ; 
+/
+create or replace trigger F15F5_Status_AUD_trig 
+before insert or update on F15F5_Status 
+for each row 
+begin 
+  if inserting then 
+    :new.created := localtimestamp; 
+    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.row_version_number := 1; 
+  elsif updating then 
+    :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
+  end if; 
+  if inserting or updating then 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+  end if; 
+end; 
+/
+
+DROP SEQUENCE F15F5_Tasks_seq ; 
+create sequence F15F5_Tasks_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+
+create or replace trigger F15F5_Tasks_PK_trig 
+before insert on F15F5_Tasks
+for each row 
+begin 
+select F15F5_Tasks_seq.nextval into :new.task_id from dual; 
+end; 
+/
+alter table F15F5_Tasks add created date ; 
+alter table F15F5_Tasks add created_by VARCHAR2 (255) ; 
+alter table F15F5_Tasks add row_version_number integer ; 
+alter table F15F5_Tasks add updated date ; 
+alter table F15F5_Tasks add updated_by VARCHAR2 (255) ; 
+/
+create or replace trigger F15F5_Tasks_AUD_trig 
+before insert or update on F15F5_Tasks 
+for each row 
+begin 
+  if inserting then 
+    :new.created := localtimestamp; 
+    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.row_version_number := 1; 
+  elsif updating then 
+    :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
+  end if; 
+  if inserting or updating then 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+  end if; 
+end; 
+/
+
+DROP INDEX F15F5_Emp_emp_id_FK_0 ;
+CREATE INDEX F15F5_Emp_emp_id_FK_0 ON F15F5_App(F15F5_Emp_emp_id) ;
+DROP INDEX F15F5_RFE_rfe_id_FK_1 ;
+CREATE INDEX F15F5_RFE_rfe_id_FK_1 ON F15F5_App(F15F5_RFE_rfe_id) ;
+DROP INDEX F15F5_Emp_emp_id_FK_2 ;
+CREATE INDEX F15F5_Emp_emp_id_FK_2 ON F15F5_Comt(F15F5_Emp_emp_id) ;
+DROP INDEX F15F5_RFE_rfe_id_FK_3 ;
+CREATE INDEX F15F5_RFE_rfe_id_FK_3 ON F15F5_Comt(F15F5_RFE_rfe_id) ;
+DROP INDEX F15F5_RFE_rfe_id_FK_4 ;
+CREATE INDEX F15F5_RFE_rfe_id_FK_4 ON F15F5_Doc(F15F5_RFE_rfe_id) ;
+DROP INDEX F15F5_Auth_auth_id_FK_5 ;
+CREATE INDEX F15F5_Auth_auth_id_FK_5 ON F15F5_Emp(F15F5_Auth_auth_id) ;
+DROP INDEX F15F5_Lab_lab_id_FK_6 ;
+CREATE INDEX F15F5_Lab_lab_id_FK_6 ON F15F5_Emp(F15F5_Lab_lab_id) ;
+DROP INDEX F15F5_Emp_emp_id_FK_7 ;
+CREATE INDEX F15F5_Emp_emp_id_FK_7 ON F15F5_RFE(F15F5_Emp_emp_id) ;
+DROP INDEX F15F5_Status_status_id_FK_8 ;
+CREATE INDEX F15F5_Status_status_id_FK_8 ON F15F5_RFE(F15F5_Status_status_id) ;
+DROP INDEX F15F5_RFE_rfe_id_FK_9 ;
+CREATE INDEX F15F5_RFE_rfe_id_FK_9 ON F15F5_RFE_Tasks(F15F5_RFE_rfe_id) ;
+DROP INDEX F15F5_Tasks_task_id_FK_10 ;
+CREATE INDEX F15F5_Tasks_task_id_FK_10 ON F15F5_RFE_Tasks(F15F5_Tasks_task_id) ;
+DROP INDEX F15F5_Emp_emp_id_FK_11 ;
+CREATE INDEX F15F5_Emp_emp_id_FK_11 ON F15F5_Requestors(F15F5_Emp_emp_id) ;
+DROP INDEX F15F5_RFE_rfe_id_FK_12 ;
+CREATE INDEX F15F5_RFE_rfe_id_FK_12 ON F15F5_Requestors(F15F5_RFE_rfe_id) ;
+DROP INDEX F15F5_RFE_rfe_id_FK_13 ;
+CREATE INDEX F15F5_RFE_rfe_id_FK_13 ON F15F5_S_Hist(F15F5_RFE_rfe_id) ;

@@ -1,0 +1,156 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="58939E53-4426-C5E7-F9A8-14042C5B22EF" name="F15F5_EMP">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 21:32:02 UTC</createdTime>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="C917C185-8A77-9A02-DF3B-1E009B0A44B7" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="emp_id" id="AF723232-A267-EC6A-7CFF-42C8B14EEB4D">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 21:32:24 UTC</createdTime>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="C917C185-8A77-9A02-DF3B-1E009B0A44B7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="emp_status" id="D6CFB300-33F5-9CA3-CBDE-1FF838BF06C4">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 21:32:50 UTC</createdTime>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="C917C185-8A77-9A02-DF3B-1E009B0A44B7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="emp_email" id="FBA1E6AE-9972-FB9F-9805-D4CE21B36A4D">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 21:33:29 UTC</createdTime>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="C917C185-8A77-9A02-DF3B-1E009B0A44B7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="emp_lab" id="ED40615F-6F1A-01B2-F15D-CB5C2B4C943E">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 21:33:59 UTC</createdTime>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="C917C185-8A77-9A02-DF3B-1E009B0A44B7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="emp_name" id="5A0B401F-3C0A-1FB2-EF8A-B9CD497CBA9B">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 21:35:29 UTC</createdTime>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="C917C185-8A77-9A02-DF3B-1E009B0A44B7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="emp_office" id="4639EBAE-6883-2982-4707-B9E35B739823">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 21:36:04 UTC</createdTime>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="C917C185-8A77-9A02-DF3B-1E009B0A44B7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="emp_phone" id="F2A6EADA-889F-CDFC-74AB-B641C956FF5D">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 21:36:21 UTC</createdTime>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="C917C185-8A77-9A02-DF3B-1E009B0A44B7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="lab_id" id="6F512956-17C7-82A8-C2FB-D39C2155E5A9">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 21:49:05 UTC</createdTime>
+<generatorID>05042F30-CB53-0374-B172-DA810E94058D</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="C917C185-8A77-9A02-DF3B-1E009B0A44B7" value="true"/>
+</engineerTo>
+<referedAttribute>7940B1BC-C27D-108A-C4CB-11EDD062CFBE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="auth_id" id="223D317F-5AA4-3D90-4FF9-80C3AA84D751">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 22:01:31 UTC</createdTime>
+<generatorID>3265E46E-2EB3-443D-B0B1-B4DB300A78D8</generatorID>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="C917C185-8A77-9A02-DF3B-1E009B0A44B7" value="true"/>
+</engineerTo>
+<referedAttribute>4500A232-27E3-0874-B26B-CD852E432A65</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="3B6FE226-092E-3FA9-EC66-C24CA520D66D" name="F15F5_EMP PK">
+<createdBy>Gabriel</createdBy>
+<createdTime>2015-11-24 21:32:27 UTC</createdTime>
+<ownerDesignName>v7 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="C917C185-8A77-9A02-DF3B-1E009B0A44B7" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>AF723232-A267-EC6A-7CFF-42C8B14EEB4D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
