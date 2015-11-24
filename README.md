@@ -3,4 +3,4 @@ LINK TO PROJECT
 https://github.com/tschmidt64/F15F5-CS347-Project.git
 
 LINK TO APPLICATION
-https://apex.oracle.com/pls/apex/f?p=4000:1:108053547933118::NO:RP:FB_FLOW_ID,F4000_P1_FLOW,P0_FLOWPAGE,RECENT_PAGES:96701,96701,96701;|,
+https://apex.oracle.com/pls/apex/f?p=96701:1:101004649670461:::::
